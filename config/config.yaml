@@ -1,0 +1,96 @@
+# QuMARA Main Configuration
+
+env: development
+debug: true
+log_level: INFO
+log_dir: data/logs
+seed: 42
+version: "0.1.0"
+
+# Service Configuration
+services:
+  auth_service:
+    host: localhost
+    port: 8001
+    workers: 4
+    timeout: 30
+
+  gateway:
+    host: localhost
+    port: 8000
+    workers: 4
+    timeout: 60
+
+  user_service:
+    host: localhost
+    port: 8002
+    workers: 2
+
+  customer_service:
+    host: localhost
+    port: 8003
+    workers: 2
+
+  account_service:
+    host: localhost
+    port: 8004
+    workers: 2
+
+  transaction_service:
+    host: localhost
+    port: 8005
+    workers: 2
+
+  payment_service:
+    host: localhost
+    port: 8006
+    workers: 2
+
+  fraud_service:
+    host: localhost
+    port: 8007
+    workers: 2
+
+# JWT Configuration
+jwt:
+  secret_key: your-secret-key-change-in-production
+  algorithm: HS256
+  access_token_expire_minutes: 30
+  refresh_token_expire_days: 7
+  issuer: qumara
+  audience: qumara-services
+
+# Database Configuration
+database:
+  url: sqlite:///./qumara.db
+  echo: false
+
+# Prometheus Configuration
+prometheus:
+  enabled: true
+  port: 9090
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+# Grafana Configuration
+grafana:
+  enabled: true
+  port: 3000
+  admin_user: admin
+  admin_password: admin
+
+# RL Configuration
+rl:
+  training_episodes: 1000
+  steps_per_episode: 100
+  learning_rate: 0.0003
+  discount_factor: 0.99
+
+# Data paths
+data:
+  raw: data/raw
+  processed: data/processed
+  benchmarks: data/benchmarks
+  results: data/results
+  plots: data/plots
+  logs: data/logs

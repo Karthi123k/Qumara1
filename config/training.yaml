@@ -1,0 +1,31 @@
+# RL Training Configuration
+
+training:
+  episodes: 1000
+  max_steps_per_episode: 500
+  learning_rate: 0.0003
+  discount_factor: 0.99
+  epsilon: 1.0
+  epsilon_decay: 0.995
+  epsilon_min: 0.01
+  batch_size: 64
+  replay_buffer_size: 100000
+  update_frequency: 4
+  target_update_frequency: 1000
+
+agent:
+  type: DQN
+  network:
+    hidden_layers: [128, 64]
+    activation: relu
+    dropout: 0.1
+
+evaluation:
+  episodes: 100
+  interval: 50
+  render: false
+
+checkpoint:
+  enabled: true
+  interval: 100
+  directory: data/results

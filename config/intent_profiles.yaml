@@ -1,0 +1,75 @@
+# Intent Profiles Configuration
+
+intent_profiles:
+  security_first:
+    name: "Security First"
+    description: "Maximize security level and verification"
+    weights:
+      security: 0.5
+      latency: 0.1
+      resource: 0.2
+      availability: 0.2
+    security_threshold: "high"
+    latency_threshold_ms: 200
+    preferred_algorithms:
+      - "ML-DSA-87"
+      - "SLH-DSA-256"
+      - "ML-DSA-65"
+
+  performance_first:
+    name: "Performance First"
+    description: "Minimize latency and resource usage"
+    weights:
+      security: 0.2
+      latency: 0.5
+      resource: 0.15
+      availability: 0.15
+    security_threshold: "medium"
+    latency_threshold_ms: 50
+    preferred_algorithms:
+      - "ML-DSA-44"
+      - "SLH-DSA-128"
+
+  balanced:
+    name: "Balanced"
+    description: "Balance across all metrics"
+    weights:
+      security: 0.3
+      latency: 0.3
+      resource: 0.2
+      availability: 0.2
+    security_threshold: "high"
+    latency_threshold_ms: 100
+    preferred_algorithms:
+      - "ML-DSA-65"
+      - "SLH-DSA-192"
+      - "ML-DSA-44"
+
+  resource_efficient:
+    name: "Resource Efficient"
+    description: "Minimize CPU and memory usage"
+    weights:
+      security: 0.2
+      latency: 0.2
+      resource: 0.4
+      availability: 0.2
+    security_threshold: "medium"
+    latency_threshold_ms: 150
+    preferred_algorithms:
+      - "ML-DSA-44"
+      - "SLH-DSA-128"
+      - "ML-DSA-65"
+
+  network_efficient:
+    name: "Network Efficient"
+    description: "Minimize bandwidth and network overhead"
+    weights:
+      security: 0.2
+      latency: 0.3
+      resource: 0.25
+      availability: 0.25
+    security_threshold: "medium"
+    latency_threshold_ms: 100
+    preferred_algorithms:
+      - "ML-DSA-44"
+      - "SLH-DSA-128"

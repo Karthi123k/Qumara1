@@ -1,0 +1,74 @@
+# Post-Quantum Authentication Algorithms Configuration
+
+algorithms:
+  ML-DSA-44:
+    name: "ML-DSA-44"
+    security_category: "medium"
+    signature_size_bytes: 1440
+    jwt_size_bytes: 1920
+    avg_signing_latency_ms: 2.5
+    avg_verification_latency_ms: 1.8
+    cpu_cost_percent: 15
+    memory_cost_mb: 32
+    bandwidth_cost_kbps: 15.36
+    enabled: true
+
+  ML-DSA-65:
+    name: "ML-DSA-65"
+    security_category: "high"
+    signature_size_bytes: 2044
+    jwt_size_bytes: 2720
+    avg_signing_latency_ms: 4.2
+    avg_verification_latency_ms: 2.9
+    cpu_cost_percent: 22
+    memory_cost_mb: 48
+    bandwidth_cost_kbps: 21.76
+    enabled: true
+
+  ML-DSA-87:
+    name: "ML-DSA-87"
+    security_category: "critical"
+    signature_size_bytes: 2420
+    jwt_size_bytes: 3227
+    avg_signing_latency_ms: 6.1
+    avg_verification_latency_ms: 4.2
+    cpu_cost_percent: 28
+    memory_cost_mb: 64
+    bandwidth_cost_kbps: 25.92
+    enabled: true
+
+  SLH-DSA-128:
+    name: "SLH-DSA-128"
+    security_category: "medium"
+    signature_size_bytes: 2144
+    jwt_size_bytes: 2851
+    avg_signing_latency_ms: 8.5
+    avg_verification_latency_ms: 1.2
+    cpu_cost_percent: 18
+    memory_cost_mb: 40
+    bandwidth_cost_kbps: 22.784
+    enabled: true
+
+  SLH-DSA-192:
+    name: "SLH-DSA-192"
+    security_category: "high"
+    signature_size_bytes: 3856
+    jwt_size_bytes: 5141
+    avg_signing_latency_ms: 16.2
+    avg_verification_latency_ms: 1.8
+    cpu_cost_percent: 24
+    memory_cost_mb: 56
+    bandwidth_cost_kbps: 41.088
+    enabled: true
+
+  SLH-DSA-256:
+    name: "SLH-DSA-256"
+    security_category: "critical"
+    signature_size_bytes: 4432
+    jwt_size_bytes: 5909
+    avg_signing_latency_ms: 22.8
+    avg_verification_latency_ms: 2.4
+    cpu_cost_percent: 32
+    memory_cost_mb: 72
+    bandwidth_cost_kbps: 47.456
+    enabled: true
